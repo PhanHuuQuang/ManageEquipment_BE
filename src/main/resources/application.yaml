@@ -1,0 +1,57 @@
+server:
+  port: 9090
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://viaduct.proxy.rlwy.net:30204/railway
+    password: f1Hg-2Hee4cDh3d463-3a2h4ddG2FAHg
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+
+#  rabbitmq:
+#    host: armadillo.rmq.cloudamqp.com
+#    port: 5672
+#    username: ynpktdgu
+#    password: 3sU73Ks3p2X7Yld2gqyP5GblOTpCDWR1
+
+#rabbit:
+#  queue:
+#    save_request: save_request
+#    push_notification: push_notification
+#  exchange:
+#    manage_equipment: manage_equipment
+#  routing:
+#    save_request: save_request_routing_key
+#    push_notification: push_notification_routing_key
+
+#server:
+#  port: 9090
+#  error:
+#    include-message: always
+#
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    url: jdbc:mysql://localhost:3306/manageequipment
+#    password: 123456789
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    open-in-view: true
+
+#  rabbitmq:
+#    host: armadillo.rmq.cloudamqp.com
+#    port: 5672
+#    username: ynpktdgu
+#    password: 3sU73Ks3p2X7Yld2gqyP5GblOTpCDWR1
+
+
