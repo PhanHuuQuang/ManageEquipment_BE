@@ -15,6 +15,7 @@ public class CorsConfig {
         configuration.addAllowedOrigin("http://127.0.0.1:5174"); // Replace with your frontend's URL
         configuration.addAllowedOrigin("http://localhost:5173"); // Replace with your frontend's URL
         configuration.addAllowedOrigin("http://localhost:5174"); // Replace with your frontend's URL
+        configuration.addAllowedOrigin("http://localhost:4200"); // Replace with your frontend's URL
         configuration.addAllowedOrigin("https://equipment-ui-user.vercel.app");
         configuration.addAllowedOrigin("https://equipment-ui-admin.vercel.app");
 //        configuration.addAllowedOrigin("*");
