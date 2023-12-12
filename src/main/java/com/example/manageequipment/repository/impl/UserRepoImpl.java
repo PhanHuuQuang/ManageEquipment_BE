@@ -39,10 +39,10 @@ public class UserRepoImpl {
                 userDto.setDeviceToken(row[5].toString());
             }
             if (row[6] != null) {
-                if (Long.valueOf(row[0].toString()) == 1) {
+                if (Long.valueOf(row[6].toString()) == 1) {
                     userDto.setRole("ADMIN");
                 }
-                if (Long.valueOf(row[0].toString()) == 2) {
+                if (Long.valueOf(row[6].toString()) == 2) {
                     userDto.setRole("USER");
                 }
             }
