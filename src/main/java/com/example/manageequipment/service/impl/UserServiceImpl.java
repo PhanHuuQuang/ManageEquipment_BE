@@ -108,6 +108,9 @@ public class UserServiceImpl implements UserService {
         User userData = userRepository.findById(userId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid user id "+ userId));
 
+        Role role = roleRepository.findByName(user.getRole())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid role name "+ user.getRole()));
+
         if (user.getFirstName() != null) {
             userData.setFirstName(user.getFirstName());
         }
@@ -119,6 +122,9 @@ public class UserServiceImpl implements UserService {
         }
         if (user.getAddress() != null) {
             userData.setAddress(user.getAddress());
+        }
+        if (user.getRole() != null) {
+            userData.setRole(role);
         }
 
         User userUpdated = userRepository.save(userData);
