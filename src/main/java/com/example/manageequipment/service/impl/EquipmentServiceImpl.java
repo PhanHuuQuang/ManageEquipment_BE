@@ -78,29 +78,29 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public EquipmentDto createEquipment(EquipmentDto equipmentDto, MultipartFile image) throws IOException {
+    public EquipmentDto createEquipment(EquipmentDto equipmentDto) throws IOException {
         Equipment newEquipment = new Equipment();
-        if (image != null && !image.isEmpty()) {
-
-            Map r = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.asMap("resource_type", "auto"));
-
-            String imgUrl = (String) r.get("secure_url");
-
-            System.out.println("====================================================");
-            System.out.println("image url: "+ imgUrl);
-            System.out.println("====================================================");
-            newEquipment.setName(equipmentDto.getName());
-            newEquipment.setImageUrl(imgUrl);
-            newEquipment.setDescription(equipmentDto.getDescription());
-
-            Category category = categoryRepository.findById(equipmentDto.getType()).get();
-            newEquipment.setType(category);
-
-            Equipment equipmentCreated = equipmentRepository.save(newEquipment);
-
-            return mapToDto(equipmentCreated);
-        }
-        else {
+//        if (image != null && !image.isEmpty()) {
+//
+//            Map r = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.asMap("resource_type", "auto"));
+//
+//            String imgUrl = (String) r.get("secure_url");
+//
+//            System.out.println("====================================================");
+//            System.out.println("image url: "+ imgUrl);
+//            System.out.println("====================================================");
+//            newEquipment.setName(equipmentDto.getName());
+//            newEquipment.setImageUrl(imgUrl);
+//            newEquipment.setDescription(equipmentDto.getDescription());
+//
+//            Category category = categoryRepository.findById(equipmentDto.getType()).get();
+//            newEquipment.setType(category);
+//
+//            Equipment equipmentCreated = equipmentRepository.save(newEquipment);
+//
+//            return mapToDto(equipmentCreated);
+//        }
+//        else {
             newEquipment.setName(equipmentDto.getName());
 
             if (equipmentDto.getType() != null){
@@ -116,7 +116,7 @@ public class EquipmentServiceImpl implements EquipmentService {
             } else {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Category id should not be null!!");
             }
-        }
+//        }
     }
 
     @Override
@@ -137,7 +137,7 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public EquipmentDto updateEquipment(Long equipmentId, EquipmentDto equipmentDto, MultipartFile image) throws IOException {
+    public EquipmentDto updateEquipment(Long equipmentId, EquipmentDto equipmentDto) throws IOException {
         Equipment equipment = equipmentRepository.findById(equipmentId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid equipment id" + equipmentId));
 
@@ -155,17 +155,17 @@ public class EquipmentServiceImpl implements EquipmentService {
             equipment.setDescription(equipmentDto.getDescription());
         }
 
-        if (image != null && !image.isEmpty()) {
-
-            Map r = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.asMap("resource_type", "auto"));
-
-            String imgUrl = (String) r.get("secure_url");
-
-            System.out.println("====================================================");
-            System.out.println("image url: "+ imgUrl);
-            System.out.println("====================================================");
-            equipment.setImageUrl(imgUrl);
-        }
+//        if (image != null && !image.isEmpty()) {
+//
+//            Map r = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.asMap("resource_type", "auto"));
+//
+//            String imgUrl = (String) r.get("secure_url");
+//
+//            System.out.println("====================================================");
+//            System.out.println("image url: "+ imgUrl);
+//            System.out.println("====================================================");
+//            equipment.setImageUrl(imgUrl);
+//        }
 
         Equipment equipmentUpdated = equipmentRepository.save(equipment);
 

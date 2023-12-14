@@ -34,8 +34,8 @@ public class EquipmentController {
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @PostMapping("/create")
-    public ResponseEntity<EquipmentDto> createEquipment(@Valid @ModelAttribute EquipmentDto equipment, @ModelAttribute MultipartFile image) throws IOException {
-        return new ResponseEntity<>(equipmentService.createEquipment(equipment, image), HttpStatus.CREATED);
+    public ResponseEntity<EquipmentDto> createEquipment(@Valid @RequestBody EquipmentDto equipment) throws IOException {
+        return new ResponseEntity<>(equipmentService.createEquipment(equipment), HttpStatus.CREATED);
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")
@@ -64,8 +64,8 @@ public class EquipmentController {
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @PostMapping("/update/{equipmentId}")
-    public ResponseEntity<EquipmentDto> updateEquipment(@PathVariable Long equipmentId, @ModelAttribute EquipmentDto equipmentDto, @ModelAttribute MultipartFile image) throws IOException {
-        return new ResponseEntity<>(equipmentService.updateEquipment(equipmentId, equipmentDto, image), HttpStatus.OK);
+    public ResponseEntity<EquipmentDto> updateEquipment(@PathVariable Long equipmentId, @RequestBody EquipmentDto equipmentDto) throws IOException {
+        return new ResponseEntity<>(equipmentService.updateEquipment(equipmentId, equipmentDto), HttpStatus.OK);
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")

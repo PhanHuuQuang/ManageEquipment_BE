@@ -13,11 +13,11 @@ import java.util.List;
 public interface EquipmentService {
 
 
-    EquipmentDto createEquipment(EquipmentDto equipment, MultipartFile file) throws IOException;
+    EquipmentDto createEquipment(EquipmentDto equipment) throws IOException;
 
     List<EquipmentDto> getAllEquipment(String name);
 
-    EquipmentDto updateEquipment(Long equipmentId, EquipmentDto equipmentDto, MultipartFile image) throws IOException;
+    EquipmentDto updateEquipment(Long equipmentId, EquipmentDto equipmentDto) throws IOException;
 
     void deleteEquipment(List<Long> ids);
 
