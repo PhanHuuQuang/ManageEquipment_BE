@@ -7,8 +7,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    url: jdbc:mysql://viaduct.proxy.rlwy.net:30204/railway
-    password: f1Hg-2Hee4cDh3d463-3a2h4ddG2FAHg
+    url: jdbc:mysql://roundhouse.proxy.rlwy.net:51133/railway
+    password: bA66GBfbCHEgGgh35Cbf3Fcfe-2C2-h6
   jpa:
     hibernate:
       ddl-auto: update
