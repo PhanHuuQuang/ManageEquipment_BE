@@ -24,10 +24,10 @@ public class RabbitConfig {
     public static ConnectionFactory getConnection(){
         System.out.println("connection from RabbitMQConfig");
 
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory ("octopus.rmq3.cloudamqp.com");
-        connectionFactory.setUsername("bcxbdenu");
-        connectionFactory.setPassword("ZJq-r5HDeY5b_FXZiRZoUG8ZEHaECX4L");
-        connectionFactory.setVirtualHost("bcxbdenu");
+        CachingConnectionFactory connectionFactory = new CachingConnectionFactory ("armadillo.rmq.cloudamqp.com");
+        connectionFactory.setUsername("rguvxjrp");
+        connectionFactory.setPassword("rxey4RJ4y_gF0Eto8QEE6h5s65joWYzu");
+        connectionFactory.setVirtualHost("rguvxjrp");
 
         RabbitAdmin admin = new RabbitAdmin(connectionFactory);
         Queue queue = new Queue("push_notification_queue");
