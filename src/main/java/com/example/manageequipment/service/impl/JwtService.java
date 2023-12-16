@@ -18,7 +18,7 @@ public class JwtService {
 
     private static final String secret_key = "123";
 //  Expiration of token
-    private static final Integer expiration = 60 * 60 * 1000;
+    private static final Integer expiration = 1 * 30 * 1000;
     public String generateToken(User user, Collection<SimpleGrantedAuthority> authorities) {
         Algorithm algorithm = Algorithm.HMAC256(secret_key.getBytes());
 
