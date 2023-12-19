@@ -47,7 +47,7 @@ public class RequestController {
         return new ResponseEntity<>("Reject request success!!", HttpStatus.OK);
     }
 
-    @PostMapping("/confirm-requestg /{requestId}")
+    @PostMapping("/confirm-request/{requestId}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<String> confirmRequestEquipment(@PathVariable Long requestId) {
         producer.confirmRequestAndSendNotification(requestId);
